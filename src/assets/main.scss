@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700|Titillium+Web:900');
+@import url('https://fonts.googleapis.com/css?family=Pinyon+Script');
+
+* {
+    font-family: "Quicksand", sans-serif;
+    user-select: none;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+.wrapper {
+    position: relative;
+    // scroll-snap-type: y mandatory;
+    // scroll-behavior: smooth;
+    
+    // height: 100vh;
+    overflow: hidden;
+    transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
+}
+.fullscreen {
+    height: 100vh;
+    width: 100%;
+    // scroll-snap-align: start;
+}
+.container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100%;
+}
+.name {
+    font-family: "Titillium Web", sans-serif;
+}
+.info {
+    flex: 0 0 66.666%;
+}
+.section {
+    
+    &:nth-child(even ) {
+        .section-title__number {
+            left: -15px;
+        }
+    }
+    &:nth-child(odd) {
+        background: #f7f7f7;
+        .section-title {
+            justify-content: flex-end;
+            &__number {
+                right: -15px;
+            }
+        }
+        
+    }
+}
+
+.shadowed {
+    border-radius: 6px;
+    box-shadow: 3px -2px 6px rgba(0, 0, 0, .1);
+    border: 1px rgba(0, 0, 0, .1) solid;
+    box-sizing: border-box;
+}
+
+.section-title {
+    flex: 0 0 33.333%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    &__body {
+        position: relative;
+    }
+    &__number {
+        font-family: "Titillium Web";
+        font-weight: 900;
+        font-size: 4em;
+        position: absolute;
+        opacity: .3;
+        top: -40px;
+    }
+
+    &__text {
+        font-size: 3em;
+    }
+    
+}
+
+@media (max-width: 1280px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1080px) {
+    .additional-skills__column {
+        width: 25vw !important;
+        height: 25vw !important;
+        font-size: 1.2em;
+    }
+}
