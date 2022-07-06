@@ -9,21 +9,21 @@
       </div>
       <div class="projects__list">
         <a href="" class="project shadowed">
-          <img src="@/assets/img/oxxo.png" alt="" />
+          <img src="./../assets/img/oxxo.png" alt="" />
           <div class="project__link">
             <div class="project__name">O<span>XX</span>O</div>
             <span>visit web site</span>
           </div>
         </a>
         <a href="" class="project shadowed">
-          <img src="@/assets/img/upqode.png" alt="" />
+          <img src="./../assets/img/upqode.png" alt="" />
           <div class="project__link">
             <div class="project__name">Up<span>Qode</span></div>
             <span>visit web site</span>
           </div>
         </a>
         <a href="" class="project shadowed">
-          <img src="@/assets/img/newprovedence.png" alt="" />
+          <img src="./../assets/img/newprovedence.png" alt="" />
           <div class="project__link">
             <div class="project__name">New<span>Providence</span></div>
             <span>visit web site</span>
@@ -42,6 +42,8 @@
   &__list {
     display: flex;
     flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: center;
   }
 }
 .project {

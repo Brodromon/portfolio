@@ -60,6 +60,9 @@
   &__title {
     font-size: 3em;
     letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 20px;
   }
 
   &__text {

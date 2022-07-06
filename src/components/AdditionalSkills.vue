@@ -120,6 +120,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      flex-wrap: wrap;
       &__item {
         margin: 3px 0;
       }
