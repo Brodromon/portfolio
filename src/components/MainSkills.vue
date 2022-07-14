@@ -4,52 +4,62 @@
       <div class="section-title">
         <div class="section-title__body">
           <div class="section-title__number">01</div>
-          <div class="section-title__text">About</div>
+          <div class="section-title__text">{{ $ml.get("About") }}</div>
         </div>
       </div>
       <div class="main-skills__info info">
         <div class="main-skills__about">
-          <h2>Hello there,</h2>
+          <h2>{{ $ml.get("Hello there") }},</h2>
           <p>
-            Thank you for visiting my web site. <br /><br />
+            {{ $ml.get(`Thank you for visiting my web site.`) }} <br /><br />
 
-            My name is Sviatoslav and I'm a Front-end developer with over 2
+            {{
+              $ml.get(`My name is Sviatoslav and I'm a Front-end developer with over 2
             years experience in creating websites and web applications.
             Currently I live in Apolda, Germany and I'm looking for a job as a
-            Front-end developer in Germany or remotely. <br /><br />
+            Front-end developer in Germany or remotely.`)
+            }}
+            <br /><br />
 
-            I have experience in developing mobile-first web applications using
+            {{
+              $ml.get(`I have experience in developing mobile-first web applications using
             Vue and then converting it into a mobile application using React
-            Native WebView. <br /><br />
+            Native WebView.`)
+            }}
+            <br /><br />
 
-            Backend and databases are also not alien to me, I had experience
-            working with them.
+            {{
+              $ml.get(`Backend and databases are also not alien to me, I had experience
+            working with them.`)
+            }}
           </p>
         </div>
         <div class="main-skills__skills-sliders">
-          <div class="main-skills__label">Languages I speek</div>
+          <div class="main-skills__label">
+            {{ $ml.get("Languages I speek") }}
+          </div>
           <div class="slider">
-            <div class="slider__label">Russian</div>
-            <div class="slider__row 82">
-              <div class="slider__row__inner"></div>
+            <div class="slider__label">{{ $ml.get("Russian") }}</div>
+            <div class="slider__row">
+              <div class="slider__row__inner" style="width: 100%"></div>
             </div>
           </div>
           <div class="slider">
-            <div class="slider__label">Ukrainian</div>
+            <div class="slider__label">{{ $ml.get("Ukrainian") }}</div>
             <div class="slider__row 80">
-              <div class="slider__row__inner"></div>
+              <div class="slider__row__inner" style="width: 100%"></div>
             </div>
           </div>
           <div class="slider">
-            <div class="slider__label">Polish</div>
-            <div class="slider__row 63">
-              <div class="slider__row__inner"></div>
+            <div class="slider__label">{{ $ml.get("Polish") }}</div>
+            <div class="slider__row">
+              <div class="slider__row__inner" style="width: 70%"></div>
             </div>
           </div>
           <div class="slider">
-            <div class="slider__label">English</div>
-            <div class="slider__row 60">
-              <div class="slider__row__inner"></div>
+            <div class="slider__label">{{ $ml.get("English") }}</div>
+            <div class="slider__row">
+              <div class="slider__row__inner" style="width: 60%"></div>
             </div>
           </div>
         </div>
@@ -83,6 +93,7 @@
     position: relative;
     height: 4px;
     background: #f5f5f5;
+    overflow: hidden;
     &__inner {
       width: 50%;
       height: 100%;

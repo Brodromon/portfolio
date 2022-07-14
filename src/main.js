@@ -8,7 +8,7 @@ import './assets/main'
 
 // import Vue100vh from 'vue-div-100vh'
 
-import './assets/lang/index'
+// import './assets/lang/index'
 
 Vue.config.productionTip = false;
 

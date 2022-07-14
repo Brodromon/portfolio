@@ -4,7 +4,7 @@
       <div class="section-title">
         <div class="section-title__body">
           <div class="section-title__number">03</div>
-          <div class="section-title__text">Projects</div>
+          <div class="section-title__text">{{ $ml.get("Projects") }}</div>
         </div>
       </div>
       <div class="projects__list">
@@ -12,21 +12,21 @@
           <img src="./../assets/img/oxxo.png" alt="" />
           <div class="project__link">
             <div class="project__name">O<span>XX</span>O</div>
-            <span>visit web site</span>
+            <span>{{ $ml.get("visit web site") }}</span>
           </div>
         </a>
         <a href="" class="project shadowed">
           <img src="./../assets/img/upqode.png" alt="" />
           <div class="project__link">
             <div class="project__name">Up<span>Qode</span></div>
-            <span>visit web site</span>
+            <span>{{ $ml.get("visit web site") }}</span>
           </div>
         </a>
         <a href="" class="project shadowed">
           <img src="./../assets/img/newprovedence.png" alt="" />
           <div class="project__link">
             <div class="project__name">New<span>Providence</span></div>
-            <span>visit web site</span>
+            <span>{{ $ml.get("visit web site") }}</span>
           </div>
         </a>
       </div>

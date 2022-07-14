@@ -5,7 +5,7 @@
         <div class="additional-skills__row">
           <div class="additional-skills__column" id="qwe">
             <div class="column-inner">
-              <div class="column-title shadowed">Markup</div>
+              <div class="column-title shadowed">{{ $ml.get("Markup") }}</div>
               <div class="column-list shadowed">
                 <div class="column-list__item">HTML5</div>
                 <div class="column-list__item">CSS3</div>
@@ -17,7 +17,9 @@
           </div>
           <div class="additional-skills__column">
             <div class="column-inner">
-              <div class="column-title shadowed">Development</div>
+              <div class="column-title shadowed">
+                {{ $ml.get("Development") }}
+              </div>
               <div class="column-list shadowed">
                 <div class="column-list__item">JavaScript</div>
                 <div class="column-list__item">Vue.js (2,3)</div>
@@ -30,7 +32,7 @@
           </div>
           <div class="additional-skills__column">
             <div class="column-inner">
-              <div class="column-title shadowed">Services</div>
+              <div class="column-title shadowed">{{ $ml.get("Services") }}</div>
               <div class="column-list shadowed">
                 <div class="column-list__item">Git</div>
                 <div class="column-list__item">html2pdf</div>
@@ -42,7 +44,9 @@
           </div>
           <div class="additional-skills__column">
             <div class="column-inner">
-              <div class="column-title shadowed">Additional</div>
+              <div class="column-title shadowed">
+                {{ $ml.get("Additional") }}
+              </div>
               <div class="column-list shadowed">
                 <div class="column-list__item">PHP (Laravel)</div>
                 <div class="column-list__item">MySQL</div>
@@ -56,7 +60,7 @@
       <div class="section-title">
         <div class="section-title__body">
           <div class="section-title__number">02</div>
-          <div class="section-title__text">Skills</div>
+          <div class="section-title__text">{{ $ml.get("Skills") }}</div>
         </div>
       </div>
     </div>

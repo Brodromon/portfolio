@@ -4,8 +4,9 @@ import { MLInstaller, MLCreate, MLanguage } from 'vue-multilanguage';
 
 import Polish from "./pl";
 import English from "./en";
-// import Deutsch from "./en/en";
+// import German from "./en/en";
 // import Russian from "./en/en";
+// import Ukrainian from "./en/en";
 
 import {parsPath, replacePath} from './helpers';
 

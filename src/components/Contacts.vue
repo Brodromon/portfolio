@@ -11,12 +11,14 @@
     </div>
     <div class="contacts__body container">
       <div class="contacts__form shadowed">
-        <div class="contacts__form__title">Contact with me</div>
+        <div class="contacts__form__title">
+          {{ $ml.get("Contact with me") }}
+        </div>
         <form action="">
           <input placeholder="Name" type="text" />
           <input placeholder="Tel" type="text" />
           <textarea rows="6" placeholder="Message" name="" id=""></textarea>
-          <button>Send</button>
+          <button>{{ $ml.get("Send") }}</button>
         </form>
       </div>
     </div>
@@ -36,13 +38,13 @@
             </div>
           </div>
           <div class="column">
-            <div class="label">Website:</div>
+            <div class="label">{{ $ml.get("Website") }}:</div>
             <div class="value">
               <a href="brodromon.github.io">brodromon.github.io</a>
             </div>
           </div>
           <div class="column">
-            <div class="label">Tel:</div>
+            <div class="label">{{ $ml.get("Tel") }}:</div>
             <div class="value">
               <a href="tel:+491634820941">+49 163 4820941</a>
             </div>
