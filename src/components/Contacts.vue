@@ -97,10 +97,10 @@ export default {
         this.loading = true;
         emailjs
           .sendForm(
-            "service_ewha62q",
-            "template_gu322al",
+            process.env["VUE_APP_EMAILJS_SERVICE_ID"],
+            process.env["VUE_APP_EMAILJS_TEMPLATE_ID"],
             this.$refs.form,
-            "8dBU_HPly5RXT5rR9"
+            process.env["VUE_APP_EMAILJS_PUBLIC_KEY"]
           )
           .then(
             (result) => {
@@ -111,6 +111,11 @@ export default {
                 duration: 2000,
               });
               this.$refs.form.reset();
+              this.form = {
+                name: "",
+                tel: "",
+                message: "",
+              };
             },
             (error) => {
               this.$notify({
