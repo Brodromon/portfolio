@@ -14,11 +14,32 @@
         <div class="contacts__form__title">
           {{ $ml.get("Contact with me") }}
         </div>
-        <form action="">
-          <input placeholder="Name" type="text" />
-          <input placeholder="Tel" type="text" />
-          <textarea rows="6" placeholder="Message" name="" id=""></textarea>
-          <button>{{ $ml.get("Send") }}</button>
+        <form @submit.prevent="sendEmail" ref="form">
+          <input
+            name="from_name"
+            v-model="form.name"
+            :placeholder="`${$ml.get('Name')} *`"
+            type="text"
+          />
+          <input
+            name="from_tel"
+            v-model="form.tel"
+            :placeholder="`${$ml.get('Tel')} *`"
+            type="tel"
+            @keypress="validate"
+            @keyup="onKeyUp"
+          />
+          <textarea
+            v-model="form.message"
+            rows="6"
+            :placeholder="`${$ml.get('Message')} *`"
+            name="message"
+            id=""
+          ></textarea>
+
+          <button class="form__btn" type="submit">
+            <span> <loader v-if="loading" />{{ $ml.get("Send") }}</span>
+          </button>
         </form>
       </div>
     </div>
@@ -54,6 +75,77 @@
     </div>
   </section>
 </template>
+
+<script>
+import emailjs from "@emailjs/browser";
+export default {
+  data() {
+    return {
+      loading: false,
+      form: {
+        name: "",
+        tel: "",
+        message: "",
+      },
+    };
+  },
+  methods: {
+    sendEmail() {
+      const filled = Object.values(this.form).every((value) => value);
+
+      if (filled === true) {
+        this.loading = true;
+        emailjs
+          .sendForm(
+            "service_ewha62q",
+            "template_gu322al",
+            this.$refs.form,
+            "8dBU_HPly5RXT5rR9"
+          )
+          .then(
+            (result) => {
+              this.$notify({
+                type: "success",
+                title: this.$ml.get("Email successfully sent."),
+                group: "notices",
+                duration: 2000,
+              });
+              this.$refs.form.reset();
+            },
+            (error) => {
+              this.$notify({
+                type: "error",
+                title: this.$ml.get("Oops... Something went wrong."),
+                group: "notices",
+                duration: 2000,
+              });
+            }
+          )
+          .finally(() => {
+            this.loading = false;
+          });
+      } else {
+        this.$notify({
+          type: "error",
+          title: this.$ml.get("Please fill the form first"),
+          group: "notices",
+          duration: 2000,
+        });
+      }
+    },
+    onKeyUp(e) {
+      if (e.target.value[0] == " ") e.target.value = "";
+      this.$emit("onkeyup", e.target.value);
+    },
+    validate(ev) {
+      let charCode = String.fromCharCode(ev.keyCode);
+      if (!/[0-9.,+]/.test(charCode)) {
+        ev.preventDefault();
+      }
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .contacts {
@@ -107,12 +199,24 @@
         resize: none;
         font-size: 1em;
       }
-      button {
+      .form__btn {
         font-weight: bold;
         padding: 10px;
         background: #f7f7f7;
         border: 1px #d7d7d7 solid;
         border-radius: 6px;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          position: relative;
+          .loader {
+            position: absolute;
+            left: -30px;
+            top: -2px;
+          }
+        }
       }
     }
   }
@@ -121,7 +225,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: space-between;

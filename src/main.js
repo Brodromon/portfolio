@@ -9,23 +9,14 @@ import './assets/main'
 import './lang/index'
 import store from "./store";
 
-Vue.config.productionTip = false;
+import Notifications from 'vue-notification'
+import Loader from './components/common/Loader'
 
-Vue.directive('click-outside', {
-  bind: function (el, binding, vnode) {
-    el.clickOutsideEvent = function (event) {
-      // here I check that click was outside the el and his children
-      if (!(el == event.target || el.contains(event.target))) {
-        // and if it did, call method provided in attribute value
-        vnode.context[binding.expression](event);
-      }
-    };
-    document.body.addEventListener('click', el.clickOutsideEvent)
-  },
-  unbind: function (el) {
-    document.body.removeEventListener('click', el.clickOutsideEvent)
-  },
-});
+Vue.use(Notifications);
+
+Vue.component('loader', Loader)
+
+Vue.config.productionTip = false;
 
 new Vue({
   store,

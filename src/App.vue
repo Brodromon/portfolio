@@ -7,7 +7,7 @@
       <Projects />
       <Contacts />
     </div>
-
+    <notifications group="notices" position="bottom right" />
     {{ setLanguage() }}
   </div>
 </template>
