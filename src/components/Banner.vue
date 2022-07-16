@@ -1,20 +1,55 @@
 <template>
   <section class="banner fullscreen">
     <img class="banner__bg" src="@/assets/img/banner2.jpg" alt="" />
+    <div class="banner__lang-switcher">
+      <MLDropdown />
+    </div>
     <div class="banner__body">
       <div class="banner__title name">Sviatoslav Pavelko</div>
       <div class="banner__text position">Front End Web Developer</div>
-      <nav class="banner__links">
-        <div class="link-item"><a href="" class="link-item__link"></a></div>
-        <div class="link-item"><a href="" class="link-item__link"></a></div>
-        <div class="link-item"><a href="" class="link-item__link"></a></div>
-        <div class="link-item"><a href="" class="link-item__link"></a></div>
-        <div class="link-item"><a href="" class="link-item__link"></a></div>
-      </nav>
+      <!-- <nav class="banner__links">
+        <div class="link-item">
+          <a
+            class="link-item__link"
+            ></a
+          >
+        </div>
+        <div class="link-item">
+          <a
+            class="link-item__link"
+            ></a
+          >
+        </div>
+        <div class="link-item">
+          <a
+            class="link-item__link"
+            ></a
+          >
+        </div>
+        <div class="link-item">
+          <a
+            class="link-item__link"
+            ></a
+          >
+        </div>
+        <div class="link-item">
+          <a
+            class="link-item__link"
+            ></a
+          >
+        </div>
+      </nav> -->
     </div>
     <div class="down-arrow"></div>
   </section>
 </template>
+
+<script>
+import MLDropdown from "./common/MLDropdown";
+export default {
+  components: { MLDropdown },
+};
+</script>
 
 <style lang="scss" scoped>
 .banner {
@@ -30,6 +65,12 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
     z-index: -2;
+  }
+  &__lang-switcher {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    z-index: 100;
   }
   &__bg {
     position: absolute;
@@ -73,3 +114,4 @@
   }
 }
 </style>
+    MLDropdown

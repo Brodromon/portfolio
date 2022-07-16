@@ -7,6 +7,8 @@
       <Projects />
       <Contacts />
     </div>
+
+    {{ setLanguage() }}
   </div>
 </template>
 
@@ -17,10 +19,25 @@ import AdditionalSkills from "@/components/AdditionalSkills.vue";
 import Projects from "@/components/Projects.vue";
 import Contacts from "@/components/Contacts.vue";
 
+import { mapGetters } from "vuex";
+
 export default {
   name: "App",
   data() {
     return {};
+  },
+  methods: {
+    setLanguage() {
+      let lang = this.$store.getters.getLangKey || "en";
+      this.$ml.change(lang);
+      this.$store.commit("setLanguage", lang);
+      return "";
+    },
+  },
+  computed: {
+    ...mapGetters({
+      langKey: "getLangKey",
+    }),
   },
   components: {
     Banner,

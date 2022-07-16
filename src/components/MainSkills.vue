@@ -11,7 +11,7 @@
         <div class="main-skills__about">
           <h2>{{ $ml.get("Hello there") }},</h2>
           <p>
-            {{ $ml.get(`Thank you for visiting my web site.`) }} <br /><br />
+            {{ $ml.get(`Thank you for visiting my website.`) }} <br /><br />
 
             {{
               $ml.get(`My name is Sviatoslav and I'm a Front-end developer with over 2

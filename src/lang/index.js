@@ -4,9 +4,9 @@ import { MLInstaller, MLCreate, MLanguage } from 'vue-multilanguage';
 
 import Polish from "./pl";
 import English from "./en";
-// import German from "./en/en";
-// import Russian from "./en/en";
-// import Ukrainian from "./en/en";
+import German from "./de";
+import Russian from "./ru";
+import Ukrainian from "./ukr";
 
 import {parsPath, replacePath} from './helpers';
 
@@ -36,7 +36,10 @@ var lang = new MLCreate({
   save: false,
   languages: [
     Polish,
-    English
+    English,
+    German,
+    Russian,
+    Ukrainian
   ]
 });
 
