@@ -16,13 +16,16 @@
           </div>
         </a>
         <a href="" class="project shadowed">
-          <img src="./../assets/img/upqode.png" alt="" />
+          <img src="./../assets/img/tic-tac-toe.png" alt="" />
           <div class="project__link">
-            <div class="project__name">Up<span>Qode</span></div>
+            <div class="project__name">Tic <span>Tac</span> Toe</div>
             <span>{{ $ml.get("visit a website") }}</span>
           </div>
         </a>
-        <a href="" class="project shadowed">
+        <a
+          href="https://brodromon.github.io/sites/new_providence/index.html"
+          class="project shadowed"
+        >
           <img src="./../assets/img/newprovedence.png" alt="" />
           <div class="project__link">
             <div class="project__name">New<span>Providence</span></div>

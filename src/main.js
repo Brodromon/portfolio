@@ -3,7 +3,8 @@ import App from "./App.vue";
 
 import "./assets/main.scss";
 
-import './assets/scroll'
+import './assets/full-page-scroll'
+import '@/assets/full-page-scroll.css'
 import './assets/main'
 
 import './lang/index'

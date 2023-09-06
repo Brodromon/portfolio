@@ -62,6 +62,12 @@
               <div class="slider__row__inner" style="width: 60%"></div>
             </div>
           </div>
+          <div class="slider">
+            <div class="slider__label">{{ $ml.get("German") }}</div>
+            <div class="slider__row">
+              <div class="slider__row__inner" style="width: 60%"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
